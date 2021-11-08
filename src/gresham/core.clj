@@ -20,8 +20,6 @@
 ;(defmethod debit-credit :credit [trans] (BigInteger. ^String (clojure.string/replace (:amount trans) "." "")))
 ;(defmethod debit-credit :debit [trans] (- (BigInteger. ^String (clojure.string/replace (:amount trans) "." ""))))
 
-(debit-credit    {:date "20180408", :amount "283.07", :debit-credit :credit})
-
 (defn calculate-interest
   "Given a full list of transactions for the bank account, and a month in the
   format '201812', calculates the interest payable for that month."
