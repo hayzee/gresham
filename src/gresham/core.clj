@@ -12,8 +12,8 @@
 
 (defmulti debit-credit :debit-credit)
 
-(defmethod debit-credit :credit [trans] (BigDecimal. ^String (:amount trans)))
-(defmethod debit-credit :debit [trans] (- (BigDecimal. ^String (:amount trans))))
+(defmethod debit-credit :credit [trans] (bigdec (:amount trans)))
+(defmethod debit-credit :debit [trans] (- (bigdec (:amount trans))))
 
 ; This also works, but need to multiply by 0.00005M to get interest in calculate-interest
 ;
